@@ -87,6 +87,6 @@ export const getMessagesBysessionId=asyncHandler(async(req,res)=>{
             message:"Unauthorized"
         })
     }
-    const message=await Message.findOne({sessionId:id})
+    const message=await Message.find({sessionId:id})
     res.status(200).json(message)
 })
