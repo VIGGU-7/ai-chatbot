@@ -10,6 +10,10 @@ const messageSchema=new Schema({
         required:true,
     },
     isCode:Boolean,
+    Response:{
+         type:String,
+        required:true
+    }
 })
 
 export const Message=model("Message",messageSchema)
