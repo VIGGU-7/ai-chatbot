@@ -90,3 +90,13 @@ return res.status(200).json({
     message:"Loggedin succesfully"
 })
 })
+
+export const logout=asyncHandler(async(req,res)=>{
+  return res.cookie("token","",{
+    maxAge:0
+  })
+  return res.status(200).json({
+    success:true,
+    message:"Logout succesfull"
+  })
+})
