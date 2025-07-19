@@ -100,3 +100,7 @@ export const logout=asyncHandler(async(req,res)=>{
     message:"Logout succesfull"
   })
 })
+export const userauthsession=asyncHandler(async(req,res)=>{
+  const user=req.user
+  res.status(200).json(user)
+})
