@@ -92,7 +92,7 @@ return res.status(200).json({
 })
 
 export const logout=asyncHandler(async(req,res)=>{
-  return res.cookie("token","",{
+  res.cookie("token","",{
     maxAge:0
   })
   return res.status(200).json({
