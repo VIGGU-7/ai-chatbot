@@ -3,7 +3,9 @@ import image from '../assets/logo.png'
 import Inputbox from '../components/Inputbox'
 import { apiInstance } from '../lib'
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 function Login() {
+  const navigate=useNavigate()
   const [email,setEmail]=React.useState("")
   const [password,setPassword]=React.useState("")
   const data={email,password}
@@ -12,7 +14,7 @@ function Login() {
     try {
       const res:any=await apiInstance.post("/auth/login",data)
          toast.success("Login succesfull")
-      console.log(res)
+          navigate("/")
     } catch (error:any) {
       toast.error(error.response?.data?.message)
       console.log(error.res?.data?.message)

@@ -3,10 +3,12 @@ import image from '../assets/logo.png'
 import Inputbox from '../components/Inputbox'
 import { apiInstance } from '../lib'
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 function Login() {
   const [username,setUsername]=React.useState("")
   const [email,setEmail]=React.useState("")
   const [password,setPassword]=React.useState("")
+  const navigate=useNavigate()
   const data={username,email,password}
   const onsubmit=async(e:any)=>{
     e.preventDefault();
@@ -19,7 +21,7 @@ function Login() {
     try {
       const res:any=await apiInstance.post("/auth/signup",data)
          toast.success("Signup succesfull")
-      console.log(res)
+          navigate("/")
     } catch (error:any) {
       toast.error(error.response?.data?.message)
       console.log(error.res?.data?.message)
