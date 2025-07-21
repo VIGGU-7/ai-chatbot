@@ -90,3 +90,8 @@ export const getMessagesBysessionId=asyncHandler(async(req,res)=>{
     const message=await Message.find({sessionId:id})
     res.status(200).json(message)
 })
+export const getsessionhistory=asyncHandler(async(req,res)=>{
+ const user=req.user
+ const sessionHistory=await Session.find({ownerId:user._id}).sort({ createdAt: -1 })
+ res.status(200).json(sessionHistory)
+})
