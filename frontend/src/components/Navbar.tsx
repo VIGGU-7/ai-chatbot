@@ -6,10 +6,11 @@ import { apiInstance } from '../lib';
 import { toast } from 'react-toastify';
 import { NavLink } from 'react-router-dom';
 import { useAuthStore } from '../lib/store';
+import SearchDialog from './Search';
 function Navbar() {
   const [chathistory, setChatHistory] = React.useState([]);
   const {setNav,navBarHidden}=useAuthStore()
-
+ const [isSearchOpen, setSearchOpen] = React.useState(false);
   useEffect(() => {
     const getChatHistory = async () => {
       try {
@@ -24,7 +25,7 @@ function Navbar() {
   }, []);
   console.log(chathistory)
 return (
-  <div className={`p-4 overflow-y-auto h-screen space-y-2 bg-white w-[150px] ${navBarHidden ? "block":"hidden"} md:w-[250px] md:block`}>
+  <div className={`p-4 overflow-y-auto h-screen space-y-2 bg-transparent w-[150px] ${navBarHidden ? "block":"hidden"} md:w-[250px] md:block`}>
     <div className='flex'>
       <img src={logo} className='w-15 h-15 mr-auto' alt="logo" />
       <FiSidebar onClick={()=>{
@@ -40,9 +41,9 @@ return (
       </NavLink>
       <div className='flex p-2 rounded-lg hover:bg-gray-300 cursor-pointer'>
         <FaSearch className='mt-auto mb-auto' />
-        <p className='mt-auto mb-auto ml-2'>Search chat</p>
+        <p className='mt-auto mb-auto ml-2' onClick={()=>setSearchOpen(true)}>Search chat</p>
       </div>
-
+         <SearchDialog isOpen={isSearchOpen} onClose={() => setSearchOpen(false)} />
       {/* Chat History */}
       <p className='text-gray-500 mt-10'>Chats</p>
       {chathistory.length > 0 ? (
