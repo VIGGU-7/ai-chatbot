@@ -1,3 +1,4 @@
+import 'dotenv/config'
 export const ai = async (prompt) => {
   try {
     const res = await fetch(process.env.model, {
@@ -6,7 +7,7 @@ export const ai = async (prompt) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "tinyllama:latest",
+        model: process.env.modelname,
         prompt
       })
     });
