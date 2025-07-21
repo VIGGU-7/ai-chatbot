@@ -8,11 +8,12 @@ interface AuthStore {
   isLoggedIn: boolean;
   isLoading: boolean;
   authUser: AuthUser | null;
-
+  navBarHidden:boolean;
   setAuthUser: (user: AuthUser | null) => void;
   setIsLoggedIn: (val: boolean) => void;
   setIsLoading: (val: boolean) => void;
   checkAuth: () => Promise<void>;
+  setNav:(val:boolean)=>void;
 }
 
 import { create } from "zustand";
@@ -22,13 +23,15 @@ export const useAuthStore = create<AuthStore>((set) => ({
   isLoggedIn: false,
   isLoading: true,
   authUser: null,
-
+  navBarHidden:false,
   setAuthUser: (user) => set({ authUser: user }),
 
   setIsLoggedIn: (val) => set({ isLoggedIn: val }),
 
   setIsLoading: (val) => set({ isLoading: val }),
-
+  setNav:(val)=>{
+    set({navBarHidden:val})
+  },
   checkAuth: async () => {
     try {
       const res = await apiInstance.get("/auth/check");
