@@ -1,6 +1,6 @@
 export const ai = async (prompt) => {
   try {
-    const res = await fetch("http://68.233.110.67:3000/api/generate", {
+    const res = await fetch(process.env.model, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
