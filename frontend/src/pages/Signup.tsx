@@ -31,8 +31,8 @@ function Login() {
     <div className='flex justify-center items-center container'>
       <div className='flex flex-col container items-center justify-center mt-30'>
         <img className="w-20 h-20 ml-auto mr-auto" src={image}/>
-        <p className='text-center text-3xl font-semibold'>Welcome back.</p>
-        <p className='text-center text-3xl font-semibold'>Sign in to Continue </p>
+        <p className='text-center text-3xl font-semibold'>Welcome !.</p>
+        <p className='text-center text-3xl font-semibold'>Sign up to Continue </p>
       <form className='flex-row ml-auto mr-auto justify-center items-center p-3 mt-3'>
         <Inputbox type="text" placeholder="username" setValue={setUsername} value={username}/>
         <Inputbox type="email" placeholder="email" setValue={setEmail} value={email}/>
