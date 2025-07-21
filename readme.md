@@ -8,16 +8,20 @@
 ## demo images
 
 
-
+<img width="1919" height="970" alt="image" src="https://github.com/user-attachments/assets/d9c7f627-f95d-45f3-b4ea-108f8d737f76" />
+<img width="1919" height="968" alt="image" src="https://github.com/user-attachments/assets/911f6c7d-043c-46c1-8241-2bc7d87a0a78" />
+<img width="1918" height="931" alt="Screenshot 2025-07-21 114544" src="https://github.com/user-attachments/assets/0324aeed-6f4e-4897-9c99-2cccba396ada" />
+<img width="1919" height="936" alt="Screenshot 2025-07-21 113646" src="https://github.com/user-attachments/assets/c7740132-5102-457d-81b9-1b977767e123" />
+<img width="1919" height="1032" alt="Screenshot 2025-07-21 113545" src="https://github.com/user-attachments/assets/82abff64-560e-423d-986f-f797fde2d4d2" />
 
 
 ## Features
 
--🔐 JWT-based authentication
--🧠 Add your own AI models
--🔍 Search previous chat sessions
--💬 Chat with the AI chatbot
--🤖 Chat with your custom models
+- JWT-based authentication
+- Add your own AI models
+- Search previous chat sessions
+- Chat with the AI chatbot
+- Chat with your custom models
 
 
 ## 🚀 Tech Stack
