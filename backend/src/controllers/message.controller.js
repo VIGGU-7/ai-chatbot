@@ -95,3 +95,14 @@ export const getsessionhistory=asyncHandler(async(req,res)=>{
  const sessionHistory=await Session.find({ownerId:user._id}).sort({ createdAt: -1 })
  res.status(200).json(sessionHistory)
 })
+export const searchSession = asyncHandler(async (req, res) => {
+  const { q } = req.body;
+  const user = req.user;
+
+  const results = await Session.find({
+    ownerId: user._id,
+    title: { $regex: q, $options: 'i' }
+  });
+
+  res.status(200).json(results);
+});
